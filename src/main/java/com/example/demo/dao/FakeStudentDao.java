@@ -19,9 +19,9 @@ public class FakeStudentDao implements StudentDao{
     }
 
     @Override
-    public int insertStudent(Student student) {
+    public String insertStudent(Student student) {
        UUID id = UUID.randomUUID();
        Database.add(new Student(id,student.getName()));
-       return 0;
+       return "Successfully add student";
     }
 }

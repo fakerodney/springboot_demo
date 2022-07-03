@@ -24,7 +24,7 @@ public class StudentService {
         return studentDao.selectAllStudents();
     }
 
-    public int addStudent(Student student){
+    public String addStudent(Student student){
         return studentDao.insertStudent(student);
     }
 }

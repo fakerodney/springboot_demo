@@ -3,9 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.Student;
 import com.example.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -39,6 +37,12 @@ public class studentController {
     //这里对应的是 localhost:8080/api/student/h2
     public List<Student> getController2() {
         return studentService.getAllStudents();
+    }
+
+    @PostMapping
+    @RequestMapping("/h3")
+    public String addStudent(@RequestBody Student student){
+        return studentService.addStudent(student);
     }
 
 

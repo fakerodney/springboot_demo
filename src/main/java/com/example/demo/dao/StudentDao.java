@@ -9,6 +9,6 @@ public interface StudentDao {
 
 
     List<Student> selectAllStudents();
-    int insertStudent(Student student);
+    String insertStudent(Student student);
 
 }
