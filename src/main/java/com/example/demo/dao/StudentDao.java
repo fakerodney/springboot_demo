@@ -11,4 +11,6 @@ public interface StudentDao {
     List<Student> selectAllStudents();
     String insertStudent(Student student);
 
+    String changeStudent(Student student);
+
 }

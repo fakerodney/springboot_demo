@@ -24,4 +24,19 @@ public class FakeStudentDao implements StudentDao{
        Database.add(new Student(id,student.getName()));
        return "Successfully add student";
     }
+
+    @Override
+    public String changeStudent(Student student) {
+
+        UUID tofind = student.getId();
+        int index = -1;
+        for (int i = 0; i < Database.size();i++){
+            if (Database.get(i).getId().equals(tofind)){
+                index = i;
+                break;
+            }
+        }
+        Database.set(index,student);
+        return "Successfully update student";
+    }
 }

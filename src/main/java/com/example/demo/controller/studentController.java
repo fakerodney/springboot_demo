@@ -45,6 +45,12 @@ public class studentController {
         return studentService.addStudent(student);
     }
 
+    @PutMapping
+    @RequestMapping("/h4")
+
+    public String changeStudent(@RequestBody Student student){
+        return studentService.changeStudent(student);
+    }
 
 }
 

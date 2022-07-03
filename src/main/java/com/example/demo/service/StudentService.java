@@ -27,4 +27,8 @@ public class StudentService {
     public String addStudent(Student student){
         return studentDao.insertStudent(student);
     }
+
+    public String changeStudent(Student student){
+        return studentDao.changeStudent(student);
+    }
 }

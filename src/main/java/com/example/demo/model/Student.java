@@ -16,7 +16,7 @@ public class Student {
     }
 
     //使用json ignore，则不会被序列化，但是可以被其他的方法使用
-    @JsonIgnore
+    //@JsonIgnore
     public UUID getId() {
         return id;
     }
