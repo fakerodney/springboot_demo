@@ -47,9 +47,14 @@ public class studentController {
 
     @PutMapping
     @RequestMapping("/h4")
-
     public String changeStudent(@RequestBody Student student){
         return studentService.changeStudent(student);
+    }
+
+    @DeleteMapping(path = "{id}")
+    //这里使用localhost:8080/api/student/'id' 接口来实现对于此id的删除
+    public int deleteStudent(@PathVariable("id") UUID id){
+        return studentService.deleteStudent(id);
     }
 
 }

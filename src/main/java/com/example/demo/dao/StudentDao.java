@@ -13,4 +13,6 @@ public interface StudentDao {
 
     String changeStudent(Student student);
 
+    int deleteStudent(UUID id);
+
 }

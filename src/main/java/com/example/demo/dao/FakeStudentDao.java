@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Repository
@@ -38,5 +39,24 @@ public class FakeStudentDao implements StudentDao{
         }
         Database.set(index,student);
         return "Successfully update student";
+    }
+
+    public Optional<Student> selectStudent(UUID id){
+        for (Student s : Database){
+            if (s.getId().equals(id)){
+                return Optional.of(s);
+            }
+        }
+        return Optional.empty();
+    }
+
+    @Override
+    public int deleteStudent(UUID id) {
+        Optional<Student> optionalStudent = selectStudent(id);
+        if (!optionalStudent.isPresent()){
+            return -1;
+        }
+        Database.remove(optionalStudent.get());
+        return 1;
     }
 }
